@@ -6,7 +6,7 @@ import (
 )
 
 // CheckExistingEvents ....
-func (c *Client)CheckExistingEvents(notionToday *notion.DatabaseQueryResponse, calToday []google.EventItem) ([]string, []google.EventItem, error) {
+func (c *Client) CheckExistingEvents(notionToday *notion.DatabaseQueryResponse, calToday []google.EventItem) ([]string, []google.EventItem, error) {
 	var gcalIdList []string
 	var checkNeedsUpdate []string
 	var notInNotion []google.EventItem
