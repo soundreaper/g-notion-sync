@@ -1,8 +1,9 @@
+# TODO: Add these to global git config
 .env
 .DS_Store
 .vscode
 
-/g_auth/credentials.json
-/g_auth/token.json
+/config/credentials.json
+/config/token.json
 
 Notion - G-Cal Project Plan.txt
