@@ -17,10 +17,8 @@ type CalendarService struct {
 	Client *calendar.Service
 }
 
-
 func NewGCalService(client *calendar.Service) Service {
 	return &CalendarService{
 		Client: client,
 	}
 }
-

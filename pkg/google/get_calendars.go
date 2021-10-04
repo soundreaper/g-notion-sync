@@ -2,12 +2,9 @@ package google
 
 import "google.golang.org/api/calendar/v3"
 
-
-
-
-// GetCalendars returns the Auth User's calendars
+// GetCalendars returns the Authorized User's Calendars
 func (g *CalendarService) GetCalendars() (*calendar.CalendarList, error) {
-	// service
+	// G-Cal Service
 	service := g.Client
 	cList, err := getAuthUserCalendars(service)
 	if err != nil {
@@ -15,5 +12,3 @@ func (g *CalendarService) GetCalendars() (*calendar.CalendarList, error) {
 	}
 	return cList, nil
 }
-
-

@@ -1,6 +1,5 @@
 package google
 
-
 // CalendarType ....
 type CalendarType struct {
 	CID     string
@@ -10,8 +9,8 @@ type CalendarType struct {
 
 // EventItem ...
 type EventItem struct {
-	ID        string
-	Summary   string
+	ID         string
+	Summary    string
 	StartDate  string
 	EndDate    string
 	EditedDate string

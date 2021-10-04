@@ -16,6 +16,7 @@ import (
 	"google.golang.org/api/option"
 )
 
+// Set Up Oauth2 Token and Return Calendar Service
 func GetCalendarFromGoogle() *calendar.Service {
 	basePath, _ := getCWD()
 
@@ -113,6 +114,7 @@ func Find(slice []string, val string) (int, bool) {
 	return -1, false
 }
 
+// Return the Current Working Directory
 func getCWD() (string, error) {
 	p, err := os.Getwd()
 	basePath := path.Clean(p)

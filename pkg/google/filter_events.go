@@ -8,12 +8,14 @@ import (
 
 // FilterEvents ...
 func (g *CalendarService) FilterEvents(cList *calendar.CalendarList) ([]EventItem, error) {
+	// Create List of Calendars with Given Calendar Info
 	var calendars []CalendarType
 	srv := g.Client
 	for _, v := range cList.Items {
 		calendars = append(calendars, CalendarType{CID: v.Id, Summary: v.Summary, Events: []EventItem{}})
 	}
 
+	// Get All Events for Previous and Next 5 Days for Each Calendar and Add as EventItem List
 	for ind, cal := range calendars {
 		t1 := time.Now().AddDate(0, 0, -1).Format(time.RFC3339)
 		t2 := time.Now().AddDate(0, 0, 5).Format(time.RFC3339)
@@ -44,6 +46,7 @@ func (g *CalendarService) FilterEvents(cList *calendar.CalendarList) ([]EventIte
 		}
 	}
 
+	// Filter through All Events from All Calendars and Add Events Occurring TODAY
 	var calToday []EventItem
 	for _, cal := range calendars {
 		if len(cal.Events) != 0 {
